@@ -1,0 +1,14 @@
+
+ Performance counter stats for './prog_fast':
+
+            228.93 msec task-clock                                                            
+                33      context-switches                                                      
+                 0      cpu-migrations                                                        
+             4,283      page-faults                                                           
+
+       0.234492871 seconds time elapsed
+
+       0.219877000 seconds user
+       0.010571000 seconds sys
+
+

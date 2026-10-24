@@ -1,0 +1,5 @@
+prog_slow
+prog_fast
+*.o
+perf.data*
+FlameGraph/

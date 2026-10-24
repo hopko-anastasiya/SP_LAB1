@@ -1,0 +1,709 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 181  of event 'task-clock'
+# Event count (approx.): 181181181
+#
+# Children      Self  Command    Shared Object     Symbol                          
+# ........  ........  .........  ................  ................................
+#
+   100.00%     0.00%  prog_fast  prog_fast         [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--96.69%--multiply_matrices
+               |          
+               |--2.21%--init_matrices
+               |          0xffffffffae200bb7
+               |          0xffffffffaf929383
+               |          0xffffffffae6174ae
+               |          0xffffffffaea009ce
+               |          0xffffffffaea00643
+               |          0xffffffffaea0017b
+               |          |          
+               |          |--1.66%--0xffffffffae9fee0a
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea57
+               |          |          |          0xffffffffaee576e0
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea0c
+               |          |          |          0xffffffffaeabfdaf
+               |          |          |          0xffffffffaeabe464
+               |          |          |          0xffffffffaeabdaa1
+               |          |          |          
+               |          |           --0.55%--0xffffffffae9fe9f2
+               |          |                     0xffffffffaea80b2b
+               |          |                     0xffffffffaea7d318
+               |          |                     0xffffffffaea3b837
+               |          |                     0xffffffffaea3a182
+               |          |                     0xffffffffaea3816d
+               |          |                     0xffffffffaea36f02
+               |          |                     0xffffffffaea36dae
+               |          |                     0xffffffffaea36228
+               |          |                     0xffffffffaf93b391
+               |          |          
+               |           --0.55%--0xffffffffae9fef78
+               |                     0xffffffffaea17535
+               |          
+                --1.10%--__memset_avx2_unaligned_erms
+                          0xffffffffae200bb7
+                          0xffffffffaf929383
+                          |          
+                          |--0.55%--0xffffffffae617427
+                          |          0xffffffffae9ed9c1
+                          |          0xffffffffaf8f1c74
+                          |          
+                           --0.55%--0xffffffffae617288
+
+   100.00%     0.00%  prog_fast  libc.so.6         [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--96.69%--multiply_matrices
+               |          
+               |--2.21%--init_matrices
+               |          0xffffffffae200bb7
+               |          0xffffffffaf929383
+               |          0xffffffffae6174ae
+               |          0xffffffffaea009ce
+               |          0xffffffffaea00643
+               |          0xffffffffaea0017b
+               |          |          
+               |          |--1.66%--0xffffffffae9fee0a
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea57
+               |          |          |          0xffffffffaee576e0
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea0c
+               |          |          |          0xffffffffaeabfdaf
+               |          |          |          0xffffffffaeabe464
+               |          |          |          0xffffffffaeabdaa1
+               |          |          |          
+               |          |           --0.55%--0xffffffffae9fe9f2
+               |          |                     0xffffffffaea80b2b
+               |          |                     0xffffffffaea7d318
+               |          |                     0xffffffffaea3b837
+               |          |                     0xffffffffaea3a182
+               |          |                     0xffffffffaea3816d
+               |          |                     0xffffffffaea36f02
+               |          |                     0xffffffffaea36dae
+               |          |                     0xffffffffaea36228
+               |          |                     0xffffffffaf93b391
+               |          |          
+               |           --0.55%--0xffffffffae9fef78
+               |                     0xffffffffaea17535
+               |          
+                --1.10%--__memset_avx2_unaligned_erms
+                          0xffffffffae200bb7
+                          0xffffffffaf929383
+                          |          
+                          |--0.55%--0xffffffffae617427
+                          |          0xffffffffae9ed9c1
+                          |          0xffffffffaf8f1c74
+                          |          
+                           --0.55%--0xffffffffae617288
+
+   100.00%     0.00%  prog_fast  libc.so.6         [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               |          
+               |--96.69%--multiply_matrices
+               |          
+               |--2.21%--init_matrices
+               |          0xffffffffae200bb7
+               |          0xffffffffaf929383
+               |          0xffffffffae6174ae
+               |          0xffffffffaea009ce
+               |          0xffffffffaea00643
+               |          0xffffffffaea0017b
+               |          |          
+               |          |--1.66%--0xffffffffae9fee0a
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea57
+               |          |          |          0xffffffffaee576e0
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea0c
+               |          |          |          0xffffffffaeabfdaf
+               |          |          |          0xffffffffaeabe464
+               |          |          |          0xffffffffaeabdaa1
+               |          |          |          
+               |          |           --0.55%--0xffffffffae9fe9f2
+               |          |                     0xffffffffaea80b2b
+               |          |                     0xffffffffaea7d318
+               |          |                     0xffffffffaea3b837
+               |          |                     0xffffffffaea3a182
+               |          |                     0xffffffffaea3816d
+               |          |                     0xffffffffaea36f02
+               |          |                     0xffffffffaea36dae
+               |          |                     0xffffffffaea36228
+               |          |                     0xffffffffaf93b391
+               |          |          
+               |           --0.55%--0xffffffffae9fef78
+               |                     0xffffffffaea17535
+               |          
+                --1.10%--__memset_avx2_unaligned_erms
+                          0xffffffffae200bb7
+                          0xffffffffaf929383
+                          |          
+                          |--0.55%--0xffffffffae617427
+                          |          0xffffffffae9ed9c1
+                          |          0xffffffffaf8f1c74
+                          |          
+                           --0.55%--0xffffffffae617288
+
+   100.00%     0.00%  prog_fast  libc.so.6         [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               |          
+               |--96.69%--multiply_matrices
+               |          
+               |--2.21%--init_matrices
+               |          0xffffffffae200bb7
+               |          0xffffffffaf929383
+               |          0xffffffffae6174ae
+               |          0xffffffffaea009ce
+               |          0xffffffffaea00643
+               |          0xffffffffaea0017b
+               |          |          
+               |          |--1.66%--0xffffffffae9fee0a
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea57
+               |          |          |          0xffffffffaee576e0
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea0c
+               |          |          |          0xffffffffaeabfdaf
+               |          |          |          0xffffffffaeabe464
+               |          |          |          0xffffffffaeabdaa1
+               |          |          |          
+               |          |           --0.55%--0xffffffffae9fe9f2
+               |          |                     0xffffffffaea80b2b
+               |          |                     0xffffffffaea7d318
+               |          |                     0xffffffffaea3b837
+               |          |                     0xffffffffaea3a182
+               |          |                     0xffffffffaea3816d
+               |          |                     0xffffffffaea36f02
+               |          |                     0xffffffffaea36dae
+               |          |                     0xffffffffaea36228
+               |          |                     0xffffffffaf93b391
+               |          |          
+               |           --0.55%--0xffffffffae9fef78
+               |                     0xffffffffaea17535
+               |          
+                --1.10%--__memset_avx2_unaligned_erms
+                          0xffffffffae200bb7
+                          0xffffffffaf929383
+                          |          
+                          |--0.55%--0xffffffffae617427
+                          |          0xffffffffae9ed9c1
+                          |          0xffffffffaf8f1c74
+                          |          
+                           --0.55%--0xffffffffae617288
+
+    96.69%    96.69%  prog_fast  prog_fast         [.] multiply_matrices
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               multiply_matrices
+
+     3.31%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae200bb7
+            |
+            ---0xffffffffae200bb7
+               0xffffffffaf929383
+               |          
+               |--2.21%--0xffffffffae6174ae
+               |          0xffffffffaea009ce
+               |          0xffffffffaea00643
+               |          0xffffffffaea0017b
+               |          |          
+               |          |--1.66%--0xffffffffae9fee0a
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea57
+               |          |          |          0xffffffffaee576e0
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea0c
+               |          |          |          0xffffffffaeabfdaf
+               |          |          |          0xffffffffaeabe464
+               |          |          |          0xffffffffaeabdaa1
+               |          |          |          
+               |          |           --0.55%--0xffffffffae9fe9f2
+               |          |                     0xffffffffaea80b2b
+               |          |                     0xffffffffaea7d318
+               |          |                     0xffffffffaea3b837
+               |          |                     0xffffffffaea3a182
+               |          |                     0xffffffffaea3816d
+               |          |                     0xffffffffaea36f02
+               |          |                     0xffffffffaea36dae
+               |          |                     0xffffffffaea36228
+               |          |                     0xffffffffaf93b391
+               |          |          
+               |           --0.55%--0xffffffffae9fef78
+               |                     0xffffffffaea17535
+               |          
+               |--0.55%--0xffffffffae617427
+               |          0xffffffffae9ed9c1
+               |          0xffffffffaf8f1c74
+               |          
+                --0.55%--0xffffffffae617288
+
+     3.31%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaf929383
+            |
+            ---0xffffffffaf929383
+               |          
+               |--2.21%--0xffffffffae6174ae
+               |          0xffffffffaea009ce
+               |          0xffffffffaea00643
+               |          0xffffffffaea0017b
+               |          |          
+               |          |--1.66%--0xffffffffae9fee0a
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea57
+               |          |          |          0xffffffffaee576e0
+               |          |          |          
+               |          |          |--0.55%--0xffffffffae9fea0c
+               |          |          |          0xffffffffaeabfdaf
+               |          |          |          0xffffffffaeabe464
+               |          |          |          0xffffffffaeabdaa1
+               |          |          |          
+               |          |           --0.55%--0xffffffffae9fe9f2
+               |          |                     0xffffffffaea80b2b
+               |          |                     0xffffffffaea7d318
+               |          |                     0xffffffffaea3b837
+               |          |                     0xffffffffaea3a182
+               |          |                     0xffffffffaea3816d
+               |          |                     0xffffffffaea36f02
+               |          |                     0xffffffffaea36dae
+               |          |                     0xffffffffaea36228
+               |          |                     0xffffffffaf93b391
+               |          |          
+               |           --0.55%--0xffffffffae9fef78
+               |                     0xffffffffaea17535
+               |          
+               |--0.55%--0xffffffffae617427
+               |          0xffffffffae9ed9c1
+               |          0xffffffffaf8f1c74
+               |          
+                --0.55%--0xffffffffae617288
+
+     2.21%     0.00%  prog_fast  prog_fast         [.] init_matrices
+            |
+            ---init_matrices
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae6174ae
+               0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               |          
+               |--1.66%--0xffffffffae9fee0a
+               |          |          
+               |          |--0.55%--0xffffffffae9fea57
+               |          |          0xffffffffaee576e0
+               |          |          
+               |          |--0.55%--0xffffffffae9fea0c
+               |          |          0xffffffffaeabfdaf
+               |          |          0xffffffffaeabe464
+               |          |          0xffffffffaeabdaa1
+               |          |          
+               |           --0.55%--0xffffffffae9fe9f2
+               |                     0xffffffffaea80b2b
+               |                     0xffffffffaea7d318
+               |                     0xffffffffaea3b837
+               |                     0xffffffffaea3a182
+               |                     0xffffffffaea3816d
+               |                     0xffffffffaea36f02
+               |                     0xffffffffaea36dae
+               |                     0xffffffffaea36228
+               |                     0xffffffffaf93b391
+               |          
+                --0.55%--0xffffffffae9fef78
+                          0xffffffffaea17535
+
+     2.21%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae6174ae
+            |
+            ---0xffffffffae6174ae
+               0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               |          
+               |--1.66%--0xffffffffae9fee0a
+               |          |          
+               |          |--0.55%--0xffffffffae9fea57
+               |          |          0xffffffffaee576e0
+               |          |          
+               |          |--0.55%--0xffffffffae9fea0c
+               |          |          0xffffffffaeabfdaf
+               |          |          0xffffffffaeabe464
+               |          |          0xffffffffaeabdaa1
+               |          |          
+               |           --0.55%--0xffffffffae9fe9f2
+               |                     0xffffffffaea80b2b
+               |                     0xffffffffaea7d318
+               |                     0xffffffffaea3b837
+               |                     0xffffffffaea3a182
+               |                     0xffffffffaea3816d
+               |                     0xffffffffaea36f02
+               |                     0xffffffffaea36dae
+               |                     0xffffffffaea36228
+               |                     0xffffffffaf93b391
+               |          
+                --0.55%--0xffffffffae9fef78
+                          0xffffffffaea17535
+
+     2.21%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea009ce
+            |
+            ---0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               |          
+               |--1.66%--0xffffffffae9fee0a
+               |          |          
+               |          |--0.55%--0xffffffffae9fea57
+               |          |          0xffffffffaee576e0
+               |          |          
+               |          |--0.55%--0xffffffffae9fea0c
+               |          |          0xffffffffaeabfdaf
+               |          |          0xffffffffaeabe464
+               |          |          0xffffffffaeabdaa1
+               |          |          
+               |           --0.55%--0xffffffffae9fe9f2
+               |                     0xffffffffaea80b2b
+               |                     0xffffffffaea7d318
+               |                     0xffffffffaea3b837
+               |                     0xffffffffaea3a182
+               |                     0xffffffffaea3816d
+               |                     0xffffffffaea36f02
+               |                     0xffffffffaea36dae
+               |                     0xffffffffaea36228
+               |                     0xffffffffaf93b391
+               |          
+                --0.55%--0xffffffffae9fef78
+                          0xffffffffaea17535
+
+     2.21%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea00643
+            |
+            ---0xffffffffaea00643
+               0xffffffffaea0017b
+               |          
+               |--1.66%--0xffffffffae9fee0a
+               |          |          
+               |          |--0.55%--0xffffffffae9fea57
+               |          |          0xffffffffaee576e0
+               |          |          
+               |          |--0.55%--0xffffffffae9fea0c
+               |          |          0xffffffffaeabfdaf
+               |          |          0xffffffffaeabe464
+               |          |          0xffffffffaeabdaa1
+               |          |          
+               |           --0.55%--0xffffffffae9fe9f2
+               |                     0xffffffffaea80b2b
+               |                     0xffffffffaea7d318
+               |                     0xffffffffaea3b837
+               |                     0xffffffffaea3a182
+               |                     0xffffffffaea3816d
+               |                     0xffffffffaea36f02
+               |                     0xffffffffaea36dae
+               |                     0xffffffffaea36228
+               |                     0xffffffffaf93b391
+               |          
+                --0.55%--0xffffffffae9fef78
+                          0xffffffffaea17535
+
+     2.21%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea0017b
+            |
+            ---0xffffffffaea0017b
+               |          
+               |--1.66%--0xffffffffae9fee0a
+               |          |          
+               |          |--0.55%--0xffffffffae9fea57
+               |          |          0xffffffffaee576e0
+               |          |          
+               |          |--0.55%--0xffffffffae9fea0c
+               |          |          0xffffffffaeabfdaf
+               |          |          0xffffffffaeabe464
+               |          |          0xffffffffaeabdaa1
+               |          |          
+               |           --0.55%--0xffffffffae9fe9f2
+               |                     0xffffffffaea80b2b
+               |                     0xffffffffaea7d318
+               |                     0xffffffffaea3b837
+               |                     0xffffffffaea3a182
+               |                     0xffffffffaea3816d
+               |                     0xffffffffaea36f02
+               |                     0xffffffffaea36dae
+               |                     0xffffffffaea36228
+               |                     0xffffffffaf93b391
+               |          
+                --0.55%--0xffffffffae9fef78
+                          0xffffffffaea17535
+
+     1.66%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae9fee0a
+            |
+            ---0xffffffffae9fee0a
+               |          
+               |--0.55%--0xffffffffae9fea57
+               |          0xffffffffaee576e0
+               |          
+               |--0.55%--0xffffffffae9fea0c
+               |          0xffffffffaeabfdaf
+               |          0xffffffffaeabe464
+               |          0xffffffffaeabdaa1
+               |          
+                --0.55%--0xffffffffae9fe9f2
+                          0xffffffffaea80b2b
+                          0xffffffffaea7d318
+                          0xffffffffaea3b837
+                          0xffffffffaea3a182
+                          0xffffffffaea3816d
+                          0xffffffffaea36f02
+                          0xffffffffaea36dae
+                          0xffffffffaea36228
+                          0xffffffffaf93b391
+
+     1.10%     0.00%  prog_fast  libc.so.6         [.] __memset_avx2_unaligned_erms
+            |
+            ---__memset_avx2_unaligned_erms
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               |          
+               |--0.55%--0xffffffffae617427
+               |          0xffffffffae9ed9c1
+               |          0xffffffffaf8f1c74
+               |          
+                --0.55%--0xffffffffae617288
+
+     0.55%     0.55%  prog_fast  [unknown]         [k] 0xffffffffaf93b391
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               init_matrices
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae6174ae
+               0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               0xffffffffae9fee0a
+               0xffffffffae9fe9f2
+               0xffffffffaea80b2b
+               0xffffffffaea7d318
+               0xffffffffaea3b837
+               0xffffffffaea3a182
+               0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.55%  prog_fast  [unknown]         [k] 0xffffffffaeabdaa1
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               init_matrices
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae6174ae
+               0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               0xffffffffae9fee0a
+               0xffffffffae9fea0c
+               0xffffffffaeabfdaf
+               0xffffffffaeabe464
+               0xffffffffaeabdaa1
+
+     0.55%     0.55%  prog_fast  [unknown]         [k] 0xffffffffaee576e0
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               init_matrices
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae6174ae
+               0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               0xffffffffae9fee0a
+               0xffffffffae9fea57
+               0xffffffffaee576e0
+
+     0.55%     0.55%  prog_fast  [unknown]         [k] 0xffffffffaea17535
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               init_matrices
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae6174ae
+               0xffffffffaea009ce
+               0xffffffffaea00643
+               0xffffffffaea0017b
+               0xffffffffae9fef78
+               0xffffffffaea17535
+
+     0.55%     0.55%  prog_fast  [unknown]         [k] 0xffffffffaf8f1c74
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               __memset_avx2_unaligned_erms
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae617427
+               0xffffffffae9ed9c1
+               0xffffffffaf8f1c74
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae9fe9f2
+            |
+            ---0xffffffffae9fe9f2
+               0xffffffffaea80b2b
+               0xffffffffaea7d318
+               0xffffffffaea3b837
+               0xffffffffaea3a182
+               0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea80b2b
+            |
+            ---0xffffffffaea80b2b
+               0xffffffffaea7d318
+               0xffffffffaea3b837
+               0xffffffffaea3a182
+               0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.55%  prog_fast  [unknown]         [k] 0xffffffffae617288
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               __memset_avx2_unaligned_erms
+               0xffffffffae200bb7
+               0xffffffffaf929383
+               0xffffffffae617288
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea7d318
+            |
+            ---0xffffffffaea7d318
+               0xffffffffaea3b837
+               0xffffffffaea3a182
+               0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea3b837
+            |
+            ---0xffffffffaea3b837
+               0xffffffffaea3a182
+               0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea3a182
+            |
+            ---0xffffffffaea3a182
+               0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea3816d
+            |
+            ---0xffffffffaea3816d
+               0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae9fea0c
+            |
+            ---0xffffffffae9fea0c
+               0xffffffffaeabfdaf
+               0xffffffffaeabe464
+               0xffffffffaeabdaa1
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea36f02
+            |
+            ---0xffffffffaea36f02
+               0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae617427
+            |
+            ---0xffffffffae617427
+               0xffffffffae9ed9c1
+               0xffffffffaf8f1c74
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea36dae
+            |
+            ---0xffffffffaea36dae
+               0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaeabfdaf
+            |
+            ---0xffffffffaeabfdaf
+               0xffffffffaeabe464
+               0xffffffffaeabdaa1
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae9ed9c1
+            |
+            ---0xffffffffae9ed9c1
+               0xffffffffaf8f1c74
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae9fea57
+            |
+            ---0xffffffffae9fea57
+               0xffffffffaee576e0
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffae9fef78
+            |
+            ---0xffffffffae9fef78
+               0xffffffffaea17535
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaea36228
+            |
+            ---0xffffffffaea36228
+               0xffffffffaf93b391
+
+     0.55%     0.00%  prog_fast  [unknown]         [.] 0xffffffffaeabe464
+            |
+            ---0xffffffffaeabe464
+               0xffffffffaeabdaa1
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

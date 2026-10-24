@@ -1,0 +1,14 @@
+
+ Performance counter stats for './prog_slow':
+
+          5,293.16 msec task-clock                                                            
+               180      context-switches                                                      
+                 0      cpu-migrations                                                        
+             4,283      page-faults                                                           
+
+       5.304901673 seconds time elapsed
+
+       5.271401000 seconds user
+       0.023410000 seconds sys
+
+

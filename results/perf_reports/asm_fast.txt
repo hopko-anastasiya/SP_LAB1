@@ -1,0 +1,260 @@
+
+prog_fast:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000001000 <_init>:
+    1000:	f3 0f 1e fa          	endbr64
+    1004:	48 83 ec 08          	sub    $0x8,%rsp
+    1008:	48 8b 05 d9 2f 00 00 	mov    0x2fd9(%rip),%rax        # 3fe8 <__gmon_start__>
+    100f:	48 85 c0             	test   %rax,%rax
+    1012:	74 02                	je     1016 <_init+0x16>
+    1014:	ff d0                	call   *%rax
+    1016:	48 83 c4 08          	add    $0x8,%rsp
+    101a:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000001020 <.plt>:
+    1020:	ff 35 92 2f 00 00    	push   0x2f92(%rip)        # 3fb8 <_GLOBAL_OFFSET_TABLE_+0x8>
+    1026:	ff 25 94 2f 00 00    	jmp    *0x2f94(%rip)        # 3fc0 <_GLOBAL_OFFSET_TABLE_+0x10>
+    102c:	0f 1f 40 00          	nopl   0x0(%rax)
+    1030:	f3 0f 1e fa          	endbr64
+    1034:	68 00 00 00 00       	push   $0x0
+    1039:	e9 e2 ff ff ff       	jmp    1020 <_init+0x20>
+    103e:	66 90                	xchg   %ax,%ax
+    1040:	f3 0f 1e fa          	endbr64
+    1044:	68 01 00 00 00       	push   $0x1
+    1049:	e9 d2 ff ff ff       	jmp    1020 <_init+0x20>
+    104e:	66 90                	xchg   %ax,%ax
+
+Disassembly of section .plt.got:
+
+0000000000001050 <__cxa_finalize@plt>:
+    1050:	f3 0f 1e fa          	endbr64
+    1054:	ff 25 9e 2f 00 00    	jmp    *0x2f9e(%rip)        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    105a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+Disassembly of section .plt.sec:
+
+0000000000001060 <memset@plt>:
+    1060:	f3 0f 1e fa          	endbr64
+    1064:	ff 25 5e 2f 00 00    	jmp    *0x2f5e(%rip)        # 3fc8 <memset@GLIBC_2.2.5>
+    106a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000001070 <__printf_chk@plt>:
+    1070:	f3 0f 1e fa          	endbr64
+    1074:	ff 25 56 2f 00 00    	jmp    *0x2f56(%rip)        # 3fd0 <__printf_chk@GLIBC_2.3.4>
+    107a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+Disassembly of section .text:
+
+0000000000001080 <main>:
+    1080:	f3 0f 1e fa          	endbr64
+    1084:	55                   	push   %rbp
+    1085:	48 89 e5             	mov    %rsp,%rbp
+    1088:	e8 33 01 00 00       	call   11c0 <init_matrices>
+    108d:	e8 5e 02 00 00       	call   12f0 <multiply_matrices>
+    1092:	c5 f8 57 c0          	vxorps %xmm0,%xmm0,%xmm0
+    1096:	bf 02 00 00 00       	mov    $0x2,%edi
+    109b:	48 8d 35 66 0f 00 00 	lea    0xf66(%rip),%rsi        # 2008 <_IO_stdin_used+0x8>
+    10a2:	b8 01 00 00 00       	mov    $0x1,%eax
+    10a7:	c5 fa 5a 05 91 2f 00 	vcvtss2sd 0x2f91(%rip),%xmm0,%xmm0        # 4040 <C>
+    10ae:	00 
+    10af:	e8 bc ff ff ff       	call   1070 <__printf_chk@plt>
+    10b4:	31 c0                	xor    %eax,%eax
+    10b6:	5d                   	pop    %rbp
+    10b7:	c3                   	ret
+    10b8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+    10bf:	00 
+
+00000000000010c0 <_start>:
+    10c0:	f3 0f 1e fa          	endbr64
+    10c4:	31 ed                	xor    %ebp,%ebp
+    10c6:	49 89 d1             	mov    %rdx,%r9
+    10c9:	5e                   	pop    %rsi
+    10ca:	48 89 e2             	mov    %rsp,%rdx
+    10cd:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    10d1:	50                   	push   %rax
+    10d2:	54                   	push   %rsp
+    10d3:	45 31 c0             	xor    %r8d,%r8d
+    10d6:	31 c9                	xor    %ecx,%ecx
+    10d8:	48 8d 3d a1 ff ff ff 	lea    -0x5f(%rip),%rdi        # 1080 <main>
+    10df:	ff 15 f3 2e 00 00    	call   *0x2ef3(%rip)        # 3fd8 <__libc_start_main@GLIBC_2.34>
+    10e5:	f4                   	hlt
+    10e6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    10ed:	00 00 00 
+
+00000000000010f0 <deregister_tm_clones>:
+    10f0:	48 8d 3d 19 2f 00 00 	lea    0x2f19(%rip),%rdi        # 4010 <__TMC_END__>
+    10f7:	48 8d 05 12 2f 00 00 	lea    0x2f12(%rip),%rax        # 4010 <__TMC_END__>
+    10fe:	48 39 f8             	cmp    %rdi,%rax
+    1101:	74 15                	je     1118 <deregister_tm_clones+0x28>
+    1103:	48 8b 05 d6 2e 00 00 	mov    0x2ed6(%rip),%rax        # 3fe0 <_ITM_deregisterTMCloneTable>
+    110a:	48 85 c0             	test   %rax,%rax
+    110d:	74 09                	je     1118 <deregister_tm_clones+0x28>
+    110f:	ff e0                	jmp    *%rax
+    1111:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1118:	c3                   	ret
+    1119:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001120 <register_tm_clones>:
+    1120:	48 8d 3d e9 2e 00 00 	lea    0x2ee9(%rip),%rdi        # 4010 <__TMC_END__>
+    1127:	48 8d 35 e2 2e 00 00 	lea    0x2ee2(%rip),%rsi        # 4010 <__TMC_END__>
+    112e:	48 29 fe             	sub    %rdi,%rsi
+    1131:	48 89 f0             	mov    %rsi,%rax
+    1134:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    1138:	48 c1 f8 03          	sar    $0x3,%rax
+    113c:	48 01 c6             	add    %rax,%rsi
+    113f:	48 d1 fe             	sar    $1,%rsi
+    1142:	74 14                	je     1158 <register_tm_clones+0x38>
+    1144:	48 8b 05 a5 2e 00 00 	mov    0x2ea5(%rip),%rax        # 3ff0 <_ITM_registerTMCloneTable>
+    114b:	48 85 c0             	test   %rax,%rax
+    114e:	74 08                	je     1158 <register_tm_clones+0x38>
+    1150:	ff e0                	jmp    *%rax
+    1152:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1158:	c3                   	ret
+    1159:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000001160 <__do_global_dtors_aux>:
+    1160:	f3 0f 1e fa          	endbr64
+    1164:	80 3d b5 2e 00 00 00 	cmpb   $0x0,0x2eb5(%rip)        # 4020 <completed.0>
+    116b:	75 2b                	jne    1198 <__do_global_dtors_aux+0x38>
+    116d:	55                   	push   %rbp
+    116e:	48 83 3d 82 2e 00 00 	cmpq   $0x0,0x2e82(%rip)        # 3ff8 <__cxa_finalize@GLIBC_2.2.5>
+    1175:	00 
+    1176:	48 89 e5             	mov    %rsp,%rbp
+    1179:	74 0c                	je     1187 <__do_global_dtors_aux+0x27>
+    117b:	48 8b 3d 86 2e 00 00 	mov    0x2e86(%rip),%rdi        # 4008 <__dso_handle>
+    1182:	e8 c9 fe ff ff       	call   1050 <__cxa_finalize@plt>
+    1187:	e8 64 ff ff ff       	call   10f0 <deregister_tm_clones>
+    118c:	c6 05 8d 2e 00 00 01 	movb   $0x1,0x2e8d(%rip)        # 4020 <completed.0>
+    1193:	5d                   	pop    %rbp
+    1194:	c3                   	ret
+    1195:	0f 1f 00             	nopl   (%rax)
+    1198:	c3                   	ret
+    1199:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+00000000000011a0 <frame_dummy>:
+    11a0:	f3 0f 1e fa          	endbr64
+    11a4:	e9 77 ff ff ff       	jmp    1120 <register_tm_clones>
+    11a9:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    11b0:	00 00 00 
+    11b3:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+    11ba:	00 00 00 
+    11bd:	0f 1f 00             	nopl   (%rax)
+
+00000000000011c0 <init_matrices>:
+    11c0:	f3 0f 1e fa          	endbr64
+    11c4:	b8 08 00 00 00       	mov    $0x8,%eax
+    11c9:	48 8d 35 70 f6 af 00 	lea    0xaff670(%rip),%rsi        # b00840 <A>
+    11d0:	31 c9                	xor    %ecx,%ecx
+    11d2:	c5 fd 6f 2d 66 0e 00 	vmovdqa 0xe66(%rip),%ymm5        # 2040 <_IO_stdin_used+0x40>
+    11d9:	00 
+    11da:	c5 f9 6e e0          	vmovd  %eax,%xmm4
+    11de:	48 8d 96 c0 12 00 00 	lea    0x12c0(%rsi),%rdx
+    11e5:	c4 e2 7d 18 15 16 0e 	vbroadcastss 0xe16(%rip),%ymm2        # 2004 <_IO_stdin_used+0x4>
+    11ec:	00 00 
+    11ee:	c4 e2 7d 58 e4       	vpbroadcastd %xmm4,%ymm4
+    11f3:	c5 f9 6e d9          	vmovd  %ecx,%xmm3
+    11f7:	48 89 f0             	mov    %rsi,%rax
+    11fa:	c5 fd 6f cd          	vmovdqa %ymm5,%ymm1
+    11fe:	c4 e2 7d 58 db       	vpbroadcastd %xmm3,%ymm3
+    1203:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    120a:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    1211:	00 00 00 00 
+    1215:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    121c:	00 00 00 00 
+    1220:	c5 e5 fe c1          	vpaddd %ymm1,%ymm3,%ymm0
+    1224:	48 83 c0 20          	add    $0x20,%rax
+    1228:	c5 f5 fe cc          	vpaddd %ymm4,%ymm1,%ymm1
+    122c:	c5 fc 5b c0          	vcvtdq2ps %ymm0,%ymm0
+    1230:	c5 fc 59 c2          	vmulps %ymm2,%ymm0,%ymm0
+    1234:	c5 fc 29 40 e0       	vmovaps %ymm0,-0x20(%rax)
+    1239:	48 39 d0             	cmp    %rdx,%rax
+    123c:	75 e2                	jne    1220 <init_matrices+0x60>
+    123e:	83 c1 01             	add    $0x1,%ecx
+    1241:	48 81 c6 c0 12 00 00 	add    $0x12c0,%rsi
+    1248:	48 8d 90 c0 12 00 00 	lea    0x12c0(%rax),%rdx
+    124f:	81 f9 b0 04 00 00    	cmp    $0x4b0,%ecx
+    1255:	75 9c                	jne    11f3 <init_matrices+0x33>
+    1257:	b8 08 00 00 00       	mov    $0x8,%eax
+    125c:	48 8d 35 dd 11 58 00 	lea    0x5811dd(%rip),%rsi        # 582440 <B>
+    1263:	31 c9                	xor    %ecx,%ecx
+    1265:	c5 f9 6e e0          	vmovd  %eax,%xmm4
+    1269:	48 8d 96 c0 12 00 00 	lea    0x12c0(%rsi),%rdx
+    1270:	c4 e2 7d 58 e4       	vpbroadcastd %xmm4,%ymm4
+    1275:	c5 f9 6e d9          	vmovd  %ecx,%xmm3
+    1279:	48 89 f0             	mov    %rsi,%rax
+    127c:	c5 fd 6f cd          	vmovdqa %ymm5,%ymm1
+    1280:	c4 e2 7d 58 db       	vpbroadcastd %xmm3,%ymm3
+    1285:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+    128a:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    1291:	00 00 00 00 
+    1295:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    129c:	00 00 00 00 
+    12a0:	c5 e5 fa c1          	vpsubd %ymm1,%ymm3,%ymm0
+    12a4:	48 83 c0 20          	add    $0x20,%rax
+    12a8:	c5 f5 fe cc          	vpaddd %ymm4,%ymm1,%ymm1
+    12ac:	c5 fc 5b c0          	vcvtdq2ps %ymm0,%ymm0
+    12b0:	c5 fc 59 c2          	vmulps %ymm2,%ymm0,%ymm0
+    12b4:	c5 fc 29 40 e0       	vmovaps %ymm0,-0x20(%rax)
+    12b9:	48 39 d0             	cmp    %rdx,%rax
+    12bc:	75 e2                	jne    12a0 <init_matrices+0xe0>
+    12be:	83 c1 01             	add    $0x1,%ecx
+    12c1:	48 81 c6 c0 12 00 00 	add    $0x12c0,%rsi
+    12c8:	48 8d 90 c0 12 00 00 	lea    0x12c0(%rax),%rdx
+    12cf:	81 f9 b0 04 00 00    	cmp    $0x4b0,%ecx
+    12d5:	75 9e                	jne    1275 <init_matrices+0xb5>
+    12d7:	ba 00 e4 57 00       	mov    $0x57e400,%edx
+    12dc:	31 f6                	xor    %esi,%esi
+    12de:	48 8d 3d 5b 2d 00 00 	lea    0x2d5b(%rip),%rdi        # 4040 <C>
+    12e5:	c5 f8 77             	vzeroupper
+    12e8:	e9 73 fd ff ff       	jmp    1060 <memset@plt>
+    12ed:	0f 1f 00             	nopl   (%rax)
+
+00000000000012f0 <multiply_matrices>:
+    12f0:	f3 0f 1e fa          	endbr64
+    12f4:	4c 8d 15 45 f5 af 00 	lea    0xaff545(%rip),%r10        # b00840 <A>
+    12fb:	45 31 c9             	xor    %r9d,%r9d
+    12fe:	4c 8d 05 3b f5 af 00 	lea    0xaff53b(%rip),%r8        # b00840 <A>
+    1305:	4c 8d 1d 34 2d 00 00 	lea    0x2d34(%rip),%r11        # 4040 <C>
+    130c:	49 69 d1 c0 12 00 00 	imul   $0x12c0,%r9,%rdx
+    1313:	48 8d 0d 26 11 58 00 	lea    0x581126(%rip),%rcx        # 582440 <B>
+    131a:	4c 89 d7             	mov    %r10,%rdi
+    131d:	4c 01 da             	add    %r11,%rdx
+    1320:	c4 e2 7d 18 1f       	vbroadcastss (%rdi),%ymm3
+    1325:	c4 e2 7d 18 57 04    	vbroadcastss 0x4(%rdi),%ymm2
+    132b:	48 8d b1 c0 12 00 00 	lea    0x12c0(%rcx),%rsi
+    1332:	31 c0                	xor    %eax,%eax
+    1334:	90                   	nop
+    1335:	66 66 2e 0f 1f 84 00 	data16 cs nopw 0x0(%rax,%rax,1)
+    133c:	00 00 00 00 
+    1340:	c5 e4 59 04 01       	vmulps (%rcx,%rax,1),%ymm3,%ymm0
+    1345:	c5 fc 58 04 02       	vaddps (%rdx,%rax,1),%ymm0,%ymm0
+    134a:	c5 fc 29 04 02       	vmovaps %ymm0,(%rdx,%rax,1)
+    134f:	c5 ec 59 0c 06       	vmulps (%rsi,%rax,1),%ymm2,%ymm1
+    1354:	c5 f4 58 c0          	vaddps %ymm0,%ymm1,%ymm0
+    1358:	c5 fc 29 04 02       	vmovaps %ymm0,(%rdx,%rax,1)
+    135d:	48 83 c0 20          	add    $0x20,%rax
+    1361:	48 3d c0 12 00 00    	cmp    $0x12c0,%rax
+    1367:	75 d7                	jne    1340 <multiply_matrices+0x50>
+    1369:	48 81 c1 80 25 00 00 	add    $0x2580,%rcx
+    1370:	48 83 c7 08          	add    $0x8,%rdi
+    1374:	4c 39 c1             	cmp    %r8,%rcx
+    1377:	75 a7                	jne    1320 <multiply_matrices+0x30>
+    1379:	49 83 c1 01          	add    $0x1,%r9
+    137d:	49 81 c2 c0 12 00 00 	add    $0x12c0,%r10
+    1384:	49 81 f9 b0 04 00 00 	cmp    $0x4b0,%r9
+    138b:	0f 85 7b ff ff ff    	jne    130c <multiply_matrices+0x1c>
+    1391:	c5 f8 77             	vzeroupper
+    1394:	c3                   	ret
+
+Disassembly of section .fini:
+
+0000000000001398 <_fini>:
+    1398:	f3 0f 1e fa          	endbr64
+    139c:	48 83 ec 08          	sub    $0x8,%rsp
+    13a0:	48 83 c4 08          	add    $0x8,%rsp
+    13a4:	c3                   	ret

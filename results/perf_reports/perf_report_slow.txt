@@ -1,0 +1,70 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 570  of event 'task-clock'
+# Event count (approx.): 5757575700
+#
+# Children      Self  Command    Shared Object     Symbol                    
+# ........  ........  .........  ................  ..........................
+#
+   100.00%     0.00%  prog_slow  prog_slow         [.] _start
+            |
+            ---_start
+               __libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               multiply_matrices
+
+   100.00%     0.00%  prog_slow  libc.so.6         [.] __libc_start_main_impl (inlined)
+            |
+            ---__libc_start_main_impl (inlined)
+               call_init (inlined)
+               __libc_start_call_main
+               main
+               multiply_matrices
+
+   100.00%     0.00%  prog_slow  libc.so.6         [.] call_init (inlined)
+            |
+            ---call_init (inlined)
+               __libc_start_call_main
+               main
+               multiply_matrices
+
+   100.00%     0.00%  prog_slow  libc.so.6         [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               multiply_matrices
+
+   100.00%     0.00%  prog_slow  prog_slow         [.] main
+            |
+            ---main
+               multiply_matrices
+
+   100.00%    99.47%  prog_slow  prog_slow         [.] multiply_matrices
+            |          
+            |--99.47%--_start
+            |          __libc_start_main_impl (inlined)
+            |          call_init (inlined)
+            |          __libc_start_call_main
+            |          main
+            |          multiply_matrices
+            |          
+             --0.53%--multiply_matrices
+
+     0.35%     0.35%  prog_slow  [unknown]         [k] 0xffffffffaf929ac0
+     0.35%     0.00%  prog_slow  [unknown]         [.] 0xffffffffae200f8b
+     0.35%     0.00%  prog_slow  [unknown]         [.] 0xffffffffaf928824
+     0.18%     0.18%  prog_slow  [unknown]         [k] 0xffffffffae64dd77
+     0.18%     0.00%  prog_slow  [unknown]         [.] 0xffffffffae200f0b
+     0.18%     0.00%  prog_slow  [unknown]         [.] 0xffffffffaf9288f9
+     0.18%     0.00%  prog_slow  [unknown]         [.] 0xffffffffae64e57e
+     0.18%     0.00%  prog_slow  [unknown]         [.] 0xffffffffae64e170
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#
